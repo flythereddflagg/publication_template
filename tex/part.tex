@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[T1]{fontenc} % looks better than default font encoding
+\usepackage{lmodern} % need a newer font to work with T1 font encoding
+\usepackage{graphicx} % for including images
+\usepackage{enumitem} % for adjusting lists
+\usepackage{pgfgantt}
+\usepackage{setspace}
+%\usepackage{hyperref} % DO NOT USE THIS PACKAGE!!!
+
+% added for pandoc
+\usepackage{longtable}
+\usepackage{booktabs,siunitx}
+% general placement of media
+\graphicspath{{../media/}{../}}
+% for citing using the hyperlink command
+\newcommand\href{\cite}
+\doublespacing
+
+\DeclareGraphicsExtensions{.jpg,.JPG,.png}
+\def\tightlist{}
+% standard document info
+
+\date{\today}
+
+\begin{document}
+
+\input{section15}% EDIT THIS ONE TO CHOOSE A PART TO TYPESET!
+
+\newpage
+
+\bibliography{bibliography} 
+\bibliographystyle{apalike}
+
+\end{document}
+
+
+
+\bibliography{../../prospectus} 
+\bibliographystyle{apalike}
+
+\end{document}
