@@ -1,3 +1,10 @@
+# this makefile requires the following programs in addition to the included
+# files to run correctly
+# - latex & bibtex (obviously)
+# - pandoc
+# - python
+# - sumatra pdf
+
 CC = pdflatex
 BIB = bibtex
 
