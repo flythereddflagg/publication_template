@@ -1,4 +1,3 @@
-# AWESOME TITLE FOR YOUR PUBLICATION
+# Outline for paper
 
-*TOC and OUTLINE*
-
+1. OUtline stuff

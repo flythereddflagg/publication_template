@@ -17,7 +17,7 @@ SRC = ./tex/$(MAIN)
 all: md_to_tex tex_to_pdf clean-meta display
 
 md_to_tex:
-	python convert_to_tex.py
+	python ./src/convert_to_tex.py
 
 tex_to_pdf:
 	$(CC) $(SRC).tex
@@ -26,7 +26,7 @@ tex_to_pdf:
 	$(CC) $(SRC).tex
 
 display:
-	display_pdf.bat $(MAIN)
+	./src/display_pdf.bat $(MAIN)
 
 clean-meta:
 	del *.dvi

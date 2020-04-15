@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage[margin=1.0in]{geometry}
 \usepackage[T1]{fontenc} % looks better than default font encoding
 \usepackage{lmodern} % need a newer font to work with T1 font encoding
 \usepackage{graphicx} % for including images
@@ -11,22 +12,23 @@
 \usepackage{longtable}
 \usepackage{booktabs,siunitx}
 % general placement of media
-\graphicspath{{../media/}{../}}
+\graphicspath{{../media/}}
 % for citing using the hyperlink command
 \newcommand\href{\cite}
-\doublespacing
+\def\tightlist{}
 
 \DeclareGraphicsExtensions{.jpg,.JPG,.png}
-\def\tightlist{}
+\doublespacing
 % standard document info
-\title{TITLE HERE}
-\author{HEY ITS THE AUTHOR}
+\title{Review: Using Referenced Data Responsibly}
+\author{Joseph C. Bloxham*, Mark E. Redd*, Neil F. Giles, Thomas A. Knotts IV and W. V. Wilding}
 \date{\today}
+%\date{}
 
 \begin{document}
-\maketitle % create the title page
+\maketitle
 
-\newpage
+% \newpage
 % use standard LaTeX typesetting for the remainder of the document
 
 \foreach \i in {10,...,30} {%
