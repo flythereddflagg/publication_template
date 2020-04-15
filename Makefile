@@ -1,9 +1,3 @@
-# this makefile requires the following programs in addition to the included
-# files to run correctly
-# - latex & bibtex (obviously)
-# - pandoc
-# - python
-# - sumatra pdf
 
 CC = pdflatex
 BIB = bibtex
@@ -26,7 +20,7 @@ tex_to_pdf:
 	$(CC) $(SRC).tex
 
 display:
-	./src/display_pdf.bat $(MAIN)
+	.\src\display_pdf.bat $(MAIN)
 
 clean-meta:
 	del *.dvi

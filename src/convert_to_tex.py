@@ -32,13 +32,13 @@ for root, dirs, files in os.walk('./content'):
                 if r"\includegraphics" in line:
                     newline = line.replace(
                         r"\includegraphics",
-                        r"\includegraphics[width=1.0\textwidth]")
+                        r"\includegraphics[width=0.75\textwidth]")
                     
                     lines[i] = newline
-                if r"../media" in line:
+                if "../media" in line:
                     newline = line.replace(
-                        r"../media",
-                        r"./media")
+                        "../media",
+                        "./media")
                     
                     lines[i] = newline
             
