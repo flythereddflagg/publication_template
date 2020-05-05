@@ -8,11 +8,13 @@
   - Just right-click on the script, select 'Run with PowerShell' and answer 'a' to the permission questions.
   - The following software tools will be installed for the user:
     - [scoop](https://scoop.sh/) (to install the below software and manage updates)
-    - typora (to write in markdown with a WYSIWYG interface)
-    - pandoc (to convert from markdown and tex)
-    - python (to automate pandoc conversion and make adjustments as needed)
-    - latex (to convert from tex to pdf)
-    - sumatrapdf (to display the pdf dynamically)
+    - Typora (to write in markdown with a WYSIWYG interface)
+    - Pandoc (to convert from markdown and tex)
+    - Python (to automate pandoc conversion and make adjustments as needed) To fix references for figures and tables, the following Python packages are needed:
+      - pandoc-fignos
+      - pandoc-tablenos
+    - Latex (to convert from tex to pdf)
+    - Sumatrapdf (to display the pdf dynamically)
     - make (to automate all of this)
 
 ### How to use:

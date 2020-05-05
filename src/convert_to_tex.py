@@ -22,6 +22,10 @@ for root, dirs, files in os.walk('./content'):
                 'markdown',
                 # 'markdown-auto_identifiers',
                 md_name,
+                '--filter',
+                'pandoc-tablenos',
+                '--filter',
+                'pandoc-fignos',
                 '-o',
                 tex_name])
             
