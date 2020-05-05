@@ -8,26 +8,17 @@
 \usepackage{setspace}
 %\usepackage{hyperref} % DO NOT USE THIS PACKAGE!!!
 
-\usepackage[
-backend=bibtex8,
-style=alphabetic,
-sorting=ynt
-]{biblatex}
-\addbibresource{./bibliography.bib}
-
 % added for pandoc
 \usepackage{longtable}
 \usepackage{booktabs,siunitx}
 % general placement of media
 \graphicspath{{../media/}}
 % for citing using the hyperlink command
-\newcommand{\href}{\cite}
-\newcommand{\hyperlink}{\ref}
-\newcommand{\hypertarget}{}
+\newcommand\href{\cite}
 \def\tightlist{}
+
 \DeclareGraphicsExtensions{.jpg,.JPG,.png}
 \doublespacing
-
 % standard document info
 \title{My awesome paper}
 \author{Johnny Johnson}
@@ -40,7 +31,7 @@ sorting=ynt
 % \newpage
 % use standard LaTeX typesetting for the remainder of the document
 
-\foreach \i in {10,...,99} {%
+\foreach \i in {10,...,30} {%
     \edef\FileName{./tex/section\i}%     The % here are necessary to eliminate any
     \IfFileExists{\FileName}{%  spurious spaces that may get inserted
        \input{\FileName}%       at these points
@@ -49,6 +40,7 @@ sorting=ynt
 
 \newpage
 
-\printbibliography
+\bibliography{bibliography} 
+\bibliographystyle{apalike}
 
 \end{document}

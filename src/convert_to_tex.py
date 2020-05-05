@@ -19,30 +19,23 @@ for root, dirs, files in os.walk('./content'):
             subprocess.call([
                 'pandoc', 
                 '-r', 
-                'markdown-auto_identifiers',
+                'markdown',
+                # 'markdown-auto_identifiers',
                 md_name,
                 '-o',
                 tex_name])
             
             print(f"Making minor edits to {tex_name}...")
             with open(tex_name, 'r') as f:
-                lines = f.readlines()
-            
-            for i, line in enumerate(lines):
-                if r"\includegraphics" in line:
-                    newline = line.replace(
-                        r"\includegraphics",
-                        r"\includegraphics[width=0.75\textwidth]")
-                    
-                    lines[i] = newline
-                if "../media" in line:
-                    newline = line.replace(
-                        "../media",
-                        "./media")
-                    
-                    lines[i] = newline
-            
-            filestring = ''.join(lines)
+                filestring = f.read()
+                filestring = filestring.replace(
+                    r"\includegraphics",
+                    r"\includegraphics[width=0.75\textwidth]"
+                )
+                filestring = filestring.replace(
+                    "../media",
+                    "./media"
+                )
             
             with open(tex_name, 'w') as f:
                 f.write(filestring)
