@@ -4,7 +4,7 @@
 # 	two-digit prefix >= 10 into latex source code and 
 # 	then compile all those into a pdf. It will then
 # 	add a bibliography to the publication, delete
-# 	superfluous files and display the pdf using Sumatrapdf.
+# 	superfluous files and display the pdf using SumatraPDF.
 
 # CC specifies the Latex compiler BIB specifies the 
 # bibliography compiler

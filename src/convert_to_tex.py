@@ -37,8 +37,8 @@ for root, dirs, files in os.walk('./content'):
                     r"\includegraphics[width=0.75\textwidth]"
                 )
                 filestring = filestring.replace(
-                    "../media",
-                    "./media"
+                    "../media/",
+                    "./"
                 )
             
             with open(tex_name, 'w') as f:
