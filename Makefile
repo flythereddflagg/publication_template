@@ -26,10 +26,10 @@ all: nobib
 endif
 
 # this is the default function, runs each function in the order below
-wbib: md pdf bib clean-meta display
+wbib: md pdf bib rerun clean-meta display
 
 # same as all but skips bibliography generation
-nobib: md pdf clean-meta display
+nobib: md pdf rerun clean-meta display
 
 # converts the markdown content into latex source code
 md:
@@ -42,6 +42,8 @@ pdf:
 # adds the bibliography to the compiled pdf
 bib:
 	$(BIB) $(MAIN)
+
+rerun:
 	$(CC) $(SRC).tex
 	$(CC) $(SRC).tex
 
