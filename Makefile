@@ -13,11 +13,20 @@ BIB = bibtex
 
 # these specify the names of the .tex source files
 MAIN = main
-PART = part
 SRC = ./tex/$(MAIN)
+BIB_PATH = ./references/bibliography.bib
+
+.PHONY : wbib nobib clean clean-meta pdf bib display
+
+all:
+ifneq (,$(wildcard $(BIB_PATH)))
+all: wbib
+else 
+all: nobib
+endif
 
 # this is the default function, runs each function in the order below
-all: md pdf bib clean-meta display
+wbib: md pdf bib clean-meta display
 
 # same as all but skips bibliography generation
 nobib: md pdf clean-meta display
