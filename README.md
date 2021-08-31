@@ -1,5 +1,5 @@
 # PUBLICATION TEMPLATE
-A streamlined way to write documents in markdown and produce professional documents using Pandoc and Latex.
+A streamlined way to write documents in markdown and produce professional documents using Pandoc and LaTeX.
 
 ## Required Software
 
@@ -15,7 +15,7 @@ This template is designed for Windows users but may be adapted for Linux and Mac
     - [Pandoc](https://pandoc.org/): (required) to convert from markdown to tex
     - [Python](https://www.python.org/): (required) to automate Pandoc conversion and make adjustments as needed. To fix references for figures and tables, the following Python packages are needed:
       - [pandoc-xnos](https://github.com/tomduck/pandoc-xnos) (with dependencies)
-    - [Latex](https://miktex.org/): (required) to convert from tex to pdf. I use MiKTeX for this project.
+    - [LaTeX](https://miktex.org/): (required) to convert from tex to pdf. I use MiKTeX for this project.
     - [Sumatrapdf](https://www.sumatrapdfreader.org/free-pdf-reader.html): (required) to display the pdf dynamically
     - [make](http://gnuwin32.sourceforge.net/packages/make.htm): (required) to automate all of this.
 
@@ -31,7 +31,7 @@ This template is designed for Windows users but may be adapted for Linux and Mac
 - The other folders are for convenience in working with the document:
 
   - `./src/` contains the relevant code files to make the system work. Generally you will not do anything in that folder so just leave it alone.
-  - `./tex/` contains the generated latex files and allows you to make tweaks to the generated latex as you go.
+  - `./tex/` contains the generated LaTeX files and allows you to make tweaks to the generated LaTeX as you go.
 
 - Then just run: `PS C:\Users\...> make`
 
@@ -44,7 +44,7 @@ This template is designed for Windows users but may be adapted for Linux and Mac
   - `make bib `: generate and add a bibliography to the compiled pdf
   - `make display`: display the compiled pdf
 
-- If you are ready to make a final draft with fine-grain adjustments to your publication, copy all the latex source files into `./final_draft/`. This allows you to use the Makefile in that folder to adjust then compile the Latex files directly in the folder.
+- If you are ready to make a final draft with fine-grain adjustments to your publication, copy all the LaTeX source files into `./final_draft/`. This allows you to use the Makefile in that folder to adjust then compile the LaTeX files directly in the folder.
 
 
 Good luck! Input and contributions welcome!
