@@ -25,8 +25,6 @@ endif
 CC = pdflatex
 BIB = bibtex
 
-
-
 .PHONY : wbib nobib clean clean-meta pdf bib display
 
 all:

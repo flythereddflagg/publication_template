@@ -40,12 +40,15 @@ for root, dirs, files in os.walk("." + CONTENT_PATH):
                 md_name,
                 '--filter',
                 'pandoc-xnos',
+<<<<<<< HEAD
                 # '--filter',
                 # 'pandoc-fignos',
                 # '--filter',
                 # 'pandoc-secnos',
                 # '--filter',
                 # 'pandoc-tablenos',
+=======
+>>>>>>> 415733ad9489446dfce2eefae683aa434584c21a
                 '-o',
                 tex_name])
             
