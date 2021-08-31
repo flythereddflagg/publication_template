@@ -6,11 +6,15 @@
 \usepackage{enumitem} 				% for adjusting lists
 \usepackage{setspace}				% for double spacing	
 \usepackage{pgffor}					% needed for the for-loop
+\usepackage{calc,array}             % needed for internal calculations
+\usepackage{float}
+\usepackage{pgfplots}
 \usepackage[
 	backend=bibtex8,
 	style=numeric,
-	sorting=ynt
+	sorting=none
 ]{biblatex}							% for using the bibliography
+\usepackage{textcomp}    			% for using copyright and registered signs
 
 %%%%% PANDOC REQUIRED %%%%%%%%%%%%%%%%%
 %% pandoc-tablenos: required package
@@ -26,27 +30,8 @@
 \newcommand{\hypertarget}[1]{\ignorespaces}
 \def\tightlist{}
 
-%% pandoc-tablenos: environment to disable table caption prefixes
-\makeatletter
-\newcounter{tableno}
-\newenvironment{tablenos:no-prefix-table-caption}{
-  \caption@ifcompatibility{}{
-	\let\oldthetable\thetable
-	\let\oldtheHtable\theHtable
-	\renewcommand{\thetable}{tableno:\thetableno}
-	\renewcommand{\theHtable}{tableno:\thetableno}
-	\stepcounter{tableno}
-	\captionsetup{labelformat=empty}
-  }
-}{
-  \caption@ifcompatibility{}{
-	\captionsetup{labelformat=default}
-	\let\thetable\oldthetable
-	\let\theHtable\oldtheHtable
-	\addtocounter{table}{-1}
-  }
-}
-\makeatother
+\newenvironment{tablenos:no-prefix-table-caption}{}{}
+\newenvironment{fignos:no-prefix-figure-caption}{}{}
 %%%%% END PANDOC REQUIRED %%%%%%%%%%%%%
 
 \DeclareGraphicsExtensions{.jpg,.png}
@@ -54,25 +39,22 @@
 \addbibresource{./references/bibliography.bib}
 \doublespacing
 
-\title{My awesome paper}
-\author{Johnny Johnson}
+\title{A Study of Unexpected Autoignition Temperature Trends for Pure \emph{n}-alkanes}
+\author{Mark E. Redd \and Joseph C. Bloxham \and Thomas A. Knotts IV \and Neil F. Giles \and W. Vincent Wilding}
 \date{\today}
 
-\begin{document}
-% PARITAL DOCUMENT BODY SECTION
-% If you would like to only compile one file from your document,
-% comment out the section below and uncomment the line below 
-% and specify the section by the prefix you
-% have specified in the content folder (e.g. 15-Section-Name.md would
-% be section15).
+\errorcontextlines 10000
 
-% \input{section15}
+\begin{document}
+
+\maketitle
+\begin{abstract}
+\input{./content/00-abstract.md}
+\end{abstract}
 
 % DOCUMENT BODY SECTION
 % This is the code for the entire document based on the .tex source
 % files in the ./tex/ folder.
-
-\maketitle
 
 \foreach \i in {10,...,99} {%
     \edef\FileName{./tex/section\i}%     The % here are necessary to eliminate any
@@ -80,6 +62,16 @@
        \input{\FileName}%       at these points
     }
 }
+
+% PARITAL DOCUMENT BODY SECTION
+% If you would like to only compile one file from your document,
+% comment out the section below and uncomment the line below 
+% and specify the section by the prefix you
+% have specified in the content folder (e.g. 15-Section-Name.md would
+% be section15).
+
+% \input{./tex/section10}
+% \input{./tex/section20}
 
 % REFERENCES SECTION
 

@@ -14,8 +14,7 @@ This template is designed for Windows users but may be adapted for Linux and Mac
     - [Typora](https://typora.io/): to write in markdown with a WYSIWYG interface
     - [Pandoc](https://pandoc.org/): (required) to convert from markdown to tex
     - [Python](https://www.python.org/): (required) to automate Pandoc conversion and make adjustments as needed. To fix references for figures and tables, the following Python packages are needed:
-      - [pandoc-fignos](https://pypi.org/project/pandoc-fignos/)
-      - [pandoc-tablenos](https://pypi.org/project/pandoc-tablenos/)
+      - [pandoc-xnos](https://github.com/tomduck/pandoc-xnos) (with dependencies)
     - [Latex](https://miktex.org/): (required) to convert from tex to pdf. I use MiKTeX for this project.
     - [Sumatrapdf](https://www.sumatrapdfreader.org/free-pdf-reader.html): (required) to display the pdf dynamically
     - [make](http://gnuwin32.sourceforge.net/packages/make.htm): (required) to automate all of this.
