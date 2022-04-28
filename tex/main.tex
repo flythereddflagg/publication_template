@@ -8,13 +8,15 @@
 \usepackage{pgffor}					% needed for the for-loop
 \usepackage{calc,array}             % needed for internal calculations
 \usepackage{float}
-\usepackage{pgfplots}
 \usepackage[
 	backend=bibtex8,
 	style=numeric,
 	sorting=none
 ]{biblatex}							% for using the bibliography
 \usepackage{textcomp}    			% for using copyright and registered signs
+
+\usepackage{lineno}                 % adds line numbers
+\linenumbers
 
 %%%%% PANDOC REQUIRED %%%%%%%%%%%%%%%%%
 %% pandoc-tablenos: required package
@@ -39,29 +41,13 @@
 \addbibresource{./references/bibliography.bib}
 \doublespacing
 
-\title{A Study of Unexpected Autoignition Temperature Trends for Pure \emph{n}-alkanes}
-\author{Mark E. Redd \and Joseph C. Bloxham \and Thomas A. Knotts IV \and Neil F. Giles \and W. Vincent Wilding}
+\title{A SUPER AWESOME PAPER}
+\author{Author J. Author \and Author M. Author}
 \date{\today}
 
 \errorcontextlines 10000
 
 \begin{document}
-
-\maketitle
-\begin{abstract}
-\input{./content/00-abstract.md}
-\end{abstract}
-
-% DOCUMENT BODY SECTION
-% This is the code for the entire document based on the .tex source
-% files in the ./tex/ folder.
-
-\foreach \i in {10,...,99} {%
-    \edef\FileName{./tex/section\i}%     The % here are necessary to eliminate any
-    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
-       \input{\FileName}%       at these points
-    }
-}
 
 % PARITAL DOCUMENT BODY SECTION
 % If you would like to only compile one file from your document,
@@ -70,8 +56,23 @@
 % have specified in the content folder (e.g. 15-Section-Name.md would
 % be section15).
 
-% \input{./tex/section10}
-% \input{./tex/section20}
+% \input{section15}
+
+% DOCUMENT BODY SECTION
+% This is the code for the entire document based on the .tex source
+% files in the ./tex/ folder.
+
+\maketitle
+\begin{abstract}
+\input{./content/00-abstract.md}
+\end{abstract}
+
+\foreach \i in {10,...,99} {%
+    \edef\FileName{./tex/section\i}%     The % here are necessary to eliminate any
+    \IfFileExists{\FileName}{%  spurious spaces that may get inserted
+       \input{\FileName}%       at these points
+    }
+}
 
 % REFERENCES SECTION
 

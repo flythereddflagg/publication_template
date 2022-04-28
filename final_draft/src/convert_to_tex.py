@@ -12,7 +12,7 @@ import re
 
 HERE = os.path.dirname(os.path.realpath(__file__))
 
-CONTENT_PATH = '/content'
+CONTENT_PATH = '/.'
 
 with open(HERE + "/replace_strings.json") as f:
     REPLACE_STRINGS = json.load(f)
@@ -31,7 +31,7 @@ for root, dirs, files in os.walk("." + CONTENT_PATH):
     for filename in files:
         if filename.endswith(".md") and int(filename[:2]) > 9:
             md_name = f"{root}/{filename}"
-            tex_name = f"{root}/../tex/section{filename[:2]}.tex"
+            tex_name = f"{root}/section{filename[:2]}.tex"
             
             with open(md_name, 'r') as f:
                 filestring = f.read()
